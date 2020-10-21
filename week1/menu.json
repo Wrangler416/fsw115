@@ -1,0 +1,71 @@
+
+{
+
+	"menu": [{
+			"item": "appetizers",
+			"choices": [
+
+                {"name": "chicken wings", 
+                 "ingredients": ["chicken", "bbq"], 
+                "description": "Tasty BBQ Wings"}, 
+                
+                {"name": " conch fritters", 
+                "ingredients": ["conch", "dough", "onion"], 
+                "description": "Conch Fritters Fried to Perfection"}
+            ]
+		},
+		{
+			"item": "cold sandwiches",
+            "choices": [
+
+                {"name": "italian", 
+                "ingredients":["ham", "cheese", "turkey"], 
+                "description": "The Original Italian Sandwich"}, 
+            
+                {"name": "turkey club", 
+                "ingredients":["turkey", "onion", "lettuce"], 
+                "description": "Fresh Turkey Club"}
+            ]
+		},
+		{
+			"item": "hot sandwiches",
+			"choices": [
+
+                {"name": "cubano",
+                "ingredients": ["ham", "pickle", "mustard"],
+                "description": "Toasted Miami Cubano"},
+                
+                {"name": "reuben", 
+                "ingredients":["corned beef", "thousand island", "swiss cheese"],
+                "description": "Grilled Reuben"}
+            ]
+        },
+        {
+            "item": "desserts", 
+            "choices": [
+                
+                {"name": "brownie",
+                "ingredients":["chocolate", "fudge"],
+                "description": "Delicious Fudge Brownie"},
+                
+                {"name": "ice cream",
+                "ingredients":["milk", "ice"],
+                "description": "Home Made Ice Cream"}
+            ]
+        },
+        {
+            "item": "drinks",
+            "choices": [
+                
+                {"name": "coke",
+                "ingredients":["sugar", "water"],
+                "description": "Refreshing Soft Drink"},
+                
+                {"name": "water",
+                "ingredients": ["h2o"],
+                "description": "Spring Water"}
+
+            ]
+        }
+	]
+}
