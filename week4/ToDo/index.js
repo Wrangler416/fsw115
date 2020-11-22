@@ -1,27 +1,67 @@
-axios.get("https://api.vschool.io/karatemple/todo").then(response => {
+function getData() {
+    axios.get("https://api.vschool.io/karatemple/todo")
 
-    for(let i = 0; i < response.data.length; i++) {
-        const h1 = document.createElement("h1")
-        h1.textContent = response.data[i].title
-        document.body.appendChild(h1)
+    .then(response => createList(response.data))
+    .catch(error => console.log(error))
+}
 
-        let form = document.createElement("form")
-        form.setAttribute("name", "form")
-        document.body.appendChild(form)
+function createList(data) {
 
-        let input = document.createElement("input")
-        input.setAttribute("type", "checkbox")
-        input.setAttribute("name", "boxes")
-        input.setAttribute("id", "clicked")
-        document.body.appendChild(input) 
+    clearOut()
 
-        document.getElementById("clicked").addEventListener("click", function() {
-            h1.style.setProperty("text-decoration", "line-through")
-        })
+    for(let i = 0; i < data.length; i++) {
+            const h1 = document.createElement("h1")
+            h1.textContent = data[i].title
+            document.body.appendChild(h1) 
 
+            const checkbox = document.createElement("input")
+            checkbox.setAttribute("type", "checkbox")
+            checkbox.setAttribute("id", "boxes")
+            // checkbox.setAttribute("onClick", checkboxes())
+            document.body.appendChild(checkbox)   
+                
+}
+}
+
+// function checkboxes() {
+
+//     let checked = document.getElementById("boxes")
+
+//     if(checked.checked == true) {
+//         h1.style.setProperty("text-decoration", "line-through")
+//  }
+// }
+   
+
+
+function clearOut() {
+            const item = document.getElementById("list")
+            while(item.firstChild) {
+                item.removeChild(item.firstChild)
+            }
+}
+
+
+
+
+getData()
+
+const myForm = document.myForm
+myForm.addEventListener("submit", function(event) {
+    event.preventDefault()
+
+    const newItem = {
+
+        title: myForm.title.value,
+        description: myForm.description.value
     }
 
-})
+    myForm.title.value = "",
+    myForm.description.value = ""
 
-.catch() 
+    axios.post("https://api.vschool.io/karatemple/todo", newItem)
+
+    .then(response => createList(response.data))
+    .catch(error => console.log(error))
+})
 
